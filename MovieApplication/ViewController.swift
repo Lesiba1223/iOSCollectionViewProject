@@ -30,7 +30,7 @@ extension ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
-        cell.setup(with: movies[indexPath.row])
+        cell.setup(with: searhMovie[indexPath.row])
         
         cell.reloadInputViews()
         return cell
@@ -39,7 +39,7 @@ extension ViewController: UICollectionViewDataSource{
 
 extension ViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 190, height: 300)
+        return CGSize(width: 190, height: 260)
     }
 }
 
@@ -59,7 +59,6 @@ extension ViewController: UISearchBarDelegate{
         }
         self.collectionView.reloadData()
     }
-    
 }
 
 extension ViewController: UICollectionViewDelegate{
